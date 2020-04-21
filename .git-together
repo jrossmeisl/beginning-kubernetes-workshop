@@ -1,0 +1,4 @@
+[git-together]
+   domain = example.com
+[git-together "authors"]
+   jr = "Josh Rossmeisl; jrossmeisl@example.com"
