@@ -26,19 +26,6 @@ dependencies {
 	}
 }
 
-jib {
-	from {
-		image = "openjdk:11.0.6-slim"
-	}
-	to {
-		image = "jrossmeisl/kube-demo-app"
-		tags = setOf("v2")
-	}
-	container {
-		user = "nobody:nogroup"
-	}
-}
-
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
@@ -47,11 +34,5 @@ tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
 		jvmTarget = "1.8"
-	}
-}
-
-tasks {
-	build {
-		dependsOn(jib)
 	}
 }
