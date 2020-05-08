@@ -811,6 +811,12 @@ You can see both deployments, services and pods (apps) are running. Test that we
 
 Running this command repeatedly should produce different names, as they are fetched from `kube-demo-name-service`.
 
+Clean up by running `kubectl delete -f ./k8s`
+
+You might also want to clean up the docker images that are now floating around on your machine:
+
+	docker system prune -a
+
 ---
 
 ### Hooray!
