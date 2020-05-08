@@ -253,7 +253,7 @@ Now, let's dig in to our deployment a bit.
 
 Pods are the atomic unit in the Kubernetes platform. A pod represents a group of one or more application containers (such as Docker) and some shared resources for those containers, such as:
 
- - Shared storate, as Volumes
+ - Shared storage, as Volumes
  - Networking, as a unique cluster IP address
  - Container information such as the container image version or specific ports to use
 
@@ -780,7 +780,11 @@ We'll also make a new version of our demo app to make a call to the service. Upd
     fun hello(): String {  
         return "Greetings!. I am ${System.getenv("HOSTNAME")}. And you are ${rest.getForObject("http://kube-demo-name-service", String::class.java)}, I presume?"  
     }
+     
+Also, update the `tags` in your `jib` task in `build.gradle.kts`:
 
+    tags = setOf('v3')
+ 
 Now, when you run `skaffold dev`, it will deploy both of the applications. You should see something similar to the following in your `watch` terminal (if you are no longer running `watch` in separate terminal, you can run `kubectl get all` to see the state of the cluster):
 
     NAME                                          READY   STATUS    RESTARTS   AGE
