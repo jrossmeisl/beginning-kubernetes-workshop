@@ -19,7 +19,7 @@ You will also work with a few tools such as Skaffold and Kustomize that make dep
  - (Optional) [Cloud Code](https://cloud.google.com/code/) - a handy IDE extension available for IntelliJ and VS Code
  - (Optional) watch - a command line tool that will let us watch our cluster in real time. On a mac you can install it with `brew install watch`
 
-You'll also want to have a Docker repo where you can push/pull images. For real application work, we'll use Harbor, but for this demo, you can create a free [DockerHub](https://hub.docker.com/) account. This will avoid nuisances with authentication for the purposes of this simple demo.
+You'll also want to have a Docker repo where you can push/pull images. For the purposes of this demo, you can create a free [DockerHub](https://hub.docker.com/) account. This will avoid nuisances with authentication for the purposes of this simple demo.
 
 ---
 
