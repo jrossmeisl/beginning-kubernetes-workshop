@@ -14,7 +14,7 @@ You will also work with a few tools such as Skaffold and Kustomize that make dep
 
  - JDK 8 or higher (you probably already have this)
  - [Docker](https://docs.docker.com/get-docker/) Desktop installed (you probably already have this)
- - [Kustomize](Kustomize)
+ - [Kustomize](https://github.com/kubernetes-sigs/kustomize/tree/master/docs)
  - [Skaffold](https://skaffold.dev/docs/install/)
  - (Optional) [Cloud Code](https://cloud.google.com/code/) - a handy IDE extension available for IntelliJ and VS Code
  - (Optional) watch - a command line tool that will let us watch our cluster in real time. On a mac you can install it with `brew install watch`
