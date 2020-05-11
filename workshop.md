@@ -13,7 +13,7 @@ You will also work with a few tools such as Skaffold and Kustomize that make dep
 ### Prerequisites
 
  - JDK 8 or higher (you probably already have this)
- - [Docker](https://docs.docker.com/get-docker/) installed (you probably already have this)
+ - [Docker](https://docs.docker.com/get-docker/) Desktop installed (you probably already have this)
  - [Kustomize](Kustomize)
  - [Skaffold](https://skaffold.dev/docs/install/)
  - (Optional) [Cloud Code](https://cloud.google.com/code/) - a handy IDE extension available for IntelliJ and VS Code
