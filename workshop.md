@@ -487,26 +487,26 @@ You'll see output like
 
 Open the `skaffold.yaml` file that was created and add the following:
 
-      build:
-      	artifacts:
-      	- image: your-docker-repo/kube-demo-app
-          jib: {}
+    build:
+      artifacts:
+       - image: your-docker-repo/kube-demo-app
+       jib: {}
 
 So that your `skaffold.yaml` looks like:
 
-	apiVersion: skaffold/v2beta3
-	kind: Config
-	metadata:
-  	  name: kube-demo
-        build:
-  	  artifacts:
-          - image: your-docker-repo/kube-demo-app
-          jib: {}
-	deploy:
-  	  kubectl:
-    	    manifests:
-    	    - k8s/deployment.yml
-            - k8s/service.yml
+    apiVersion: skaffold/v2beta3
+    kind: Config
+    metadata:
+      name: kube-demo
+    build:
+      artifacts:
+        - image: your-docker-repo/kube-demo-app
+        jib: {}
+    deploy:
+      kubectl:
+        manifests:
+    	- k8s/deployment.yml
+        - k8s/service.yml
 
 
 NOTE:
