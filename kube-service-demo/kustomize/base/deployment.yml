@@ -19,7 +19,7 @@ spec:
         app: kube-demo-name-service
     spec:
       containers:
-        - image: jrossmeisl/kube-demo-service-app
+        - image: your-docker-repo/kube-demo-service-app
           name: kube-demo-name-service
           resources: {}
 status: {}
