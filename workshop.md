@@ -766,7 +766,7 @@ Kubernetes has easy built-in support for service discovery. Each service will be
 
 #### Deploy The Name Service App
 
-By now you've probably noticed the `kube-service-demo` app in this repository. It has a single endpoint that returns a random name from a predefined list. Let's build and push the service app up do our docker repo by running `./gradlew jib` or `./gradlew build`. The service application is already configured to use jib. Go to your Docker Hub page and verify that there is now a repository there named `your-docker-repo/kube-demo-service-app`.
+By now you've probably noticed the `kube-service-demo` app in this repository. It has a single endpoint that returns a random name from a predefined list. 
 
 Open up `kube-service-demo/kustomize/base/deployment.yml` and update this area
 
@@ -776,7 +776,7 @@ Open up `kube-service-demo/kustomize/base/deployment.yml` and update this area
           name: kube-demo-name-service  
           resources: {}
 
-by changing `your-docker-repo` to your real Docker Hub location.
+by changing `your-docker-repo` to your real Docker Hub location. The service application is already configured to use jib, so be sure to change `your-docker-repo` to your actual docker repo in the `kube-service-demo/build.gradle.kts` jib section. Let's build and push the service app up do our docker repo by running `./gradlew jib` or `./gradlew build`.Go to your Docker Hub page and verify that there is now a repository there named `your-docker-repo/kube-demo-service-app`.
 
 Modify `kube-demo/kustomize/base/kustomization.yml` by adding the service app as a resource:
 
