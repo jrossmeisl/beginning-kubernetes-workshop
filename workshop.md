@@ -465,7 +465,7 @@ Skaffold is a command line tool that provides us with a great foundation for con
 
 Let's generate a Skaffold configuration:
 
-    → skaffold init --XXenableJibInit
+    → skaffold init --skip-build
 
 You'll see output like
 
@@ -473,10 +473,6 @@ You'll see output like
     kind: Config
     metadata:
       name: kube-demo
-    build:
-      artifacts:
-      - image: your-docker-repo/kube-demo-app
-        jib: {}
     deploy:
       kubectl:
         manifests:
@@ -489,7 +485,32 @@ You'll see output like
     or [skaffold run] to build and deploy
     or [skaffold dev] to enter development mode, with auto-redeploy
 
-The `--XXenableJibInit` flag is required for Skaffold to pick up our Jib image configuration.
+Open the `skaffold.yaml` file that was created and add the following:
+
+      build:
+      	artifacts:
+      	- image: your-docker-repo/kube-demo-app
+          jib: {}
+
+So that your `skaffold.yaml` looks like:
+
+	apiVersion: skaffold/v2beta3
+	kind: Config
+	metadata:
+  	  name: kube-demo
+        build:
+  	  artifacts:
+          - image: your-docker-repo/kube-demo-app
+          jib: {}
+	deploy:
+  	  kubectl:
+    	    manifests:
+    	    - k8s/deployment.yml
+            - k8s/service.yml
+
+
+NOTE:
+The `--XXenableJibInit` flag is supposed to be able to be used (without `--skip-build`) to enable Skaffold to pick up our jib configuration, but this does not appear to work with the current version of Skaffold (`1.9.1`).
 
 Now, we can deploy our app to Kubernetes with this simple command:
 
