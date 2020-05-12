@@ -419,7 +419,7 @@ Change the tag in the destination repo in your `build.gradle.kts`:
 	      image = "openjdk:11.0.6-slim"  
       }  
       to {  
-	      image = "jrossmeisl/kube-demo-app"
+	      image = "your-docker-repo/kube-demo-app"
 	      tags = setOf("v2")
       }  
       container {  
