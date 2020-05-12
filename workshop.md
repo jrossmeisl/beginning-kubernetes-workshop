@@ -501,7 +501,7 @@ So that your `skaffold.yaml` looks like:
     build:
       artifacts:
         - image: your-docker-repo/kube-demo-app
-        jib: {}
+          jib: {}
     deploy:
       kubectl:
         manifests:
