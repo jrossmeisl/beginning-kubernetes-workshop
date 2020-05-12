@@ -505,7 +505,7 @@ So that your `skaffold.yaml` looks like:
     deploy:
       kubectl:
         manifests:
-      - k8s/deployment.yml
+        - k8s/deployment.yml
         - k8s/service.yml
 
 
