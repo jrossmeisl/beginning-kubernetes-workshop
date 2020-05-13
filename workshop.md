@@ -795,6 +795,13 @@ configMapGenerator:
       - application.yml
 ```
 
+Next update the image version we want to pull in `kube-demo/kustomize/base/deployment.yml`:
+
+	 spec:
+      	   containers:
+           - image: your-docker-repo/kube-demo-app:v3
+
+
 We'll also make a new version of our demo app to make a call to the service. Update the `hello()` method inside our `HelloController`:
 
     @GetMapping("/")  
